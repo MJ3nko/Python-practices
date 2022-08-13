@@ -35,12 +35,12 @@ def f_strings_output(a, b):
 
 
 def format_output(a, b):
-    print('a = {x}, b = {y} !'.format(x=a, y=b))    # Python 2.6+
-    print('a = ' + str(a) + ', b = ' + str(b))	    # String conversion required
+    print("a = {x}, b = {y} !".format(x=a, y=b))    # Python 2.6+
+    print("a = " + str(a) + ", b = " + str(b))	    # String conversion required
 
 
 def template_strings_output(name):
-    t = Template('Hey, $name!')
+    t = Template("Hey, $name!")
     print(t.substitute(name=name))
 
 
@@ -49,14 +49,14 @@ def vanilla_output(a, name):
 
 
 def raw_string():
-    raw_string = r'Look at all these \n \x \\\ values.'
+    raw_string = r"Look at all these \n \x \\\ values."
     print(raw_string)
 
 
 def check_strings_value(name):
-    if name.startswith('Mar') and name.endswith('ko'):
+    if name.startswith("Mar") and name.endswith("ko"):
         print("This is a good way to check strings.")
-    if name[:3] == 'Mar':
+    if name[:3] == "Mar":
         print("This is a bad way to check strings.")
 
 

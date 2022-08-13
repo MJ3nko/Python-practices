@@ -30,12 +30,12 @@ def for_loop(gradebook):
 def unpack_argument_list():
     items = [1, "New", 3.21, 4, 5]
     head, *body, tail = items		# Python 3.0+
-    print(head, body, tail)
+    print(head, body, tail)         # 1 ["New", 3.21, 4] 5
 
 
 def zip_usage():
-    names = ['Jenny', 'Alexus', 'Sam', 'Grace']
-    dogs_names = ['Elphonse', 'Dr. Doggy DDS', 'Carter', 'Ralph']
+    names = ["Jenny", "Alexus", "Sam", "Grace"]
+    dogs_names = ["Elphonse", "Dr. Doggy DDS", "Carter", "Ralph"]
 
     # zip is used to create a tuple
     names_and_dogs_names = zip(names, dogs_names)
