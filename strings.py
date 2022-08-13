@@ -20,11 +20,12 @@ def bool_comparison(greetings: bool) -> int:
 def strings_usage(string_param: str):
     a = 2
     b = 3.14
-    name = "Marko" * 1    
+    name = "Marko" * 1
 
     f_strings_output(a, b)
     format_output(a, b)
     raw_string()
+    template_strings_output(name)
     vanilla_output(a, name)
 
 
@@ -38,10 +39,13 @@ def format_output(a, b):
     print('a = ' + str(a) + ', b = ' + str(b))	    # String conversion required
 
 
-def vanilla_output(a, name):
-    print("Hello, %s. A has %s value." % (name, a))
+def template_strings_output(name):
     t = Template('Hey, $name!')
     print(t.substitute(name=name))
+
+
+def vanilla_output(a, name):
+    print("Hello, %s. A has %s value." % (name, a))
 
 
 def raw_string():
