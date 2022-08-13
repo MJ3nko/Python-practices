@@ -33,6 +33,14 @@ def unpack_argument_list():
     print(head, body, tail)
 
 
+def zip_usage():
+    names = ['Jenny', 'Alexus', 'Sam', 'Grace']
+    dogs_names = ['Elphonse', 'Dr. Doggy DDS', 'Carter', 'Ralph']
+
+    # zip is used to create a tuple
+    names_and_dogs_names = zip(names, dogs_names)
+
+
 if __name__ == "__main__":
     lists_usage()
     unpack_argument_list()

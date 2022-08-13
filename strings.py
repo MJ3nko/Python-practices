@@ -31,7 +31,7 @@ def strings_usage(string_param: str):
 
 def f_strings_output(a, b):
     print(f"a = {a} and b = {b}")					# Python 3.6+
-    print(f"a = {a=}")								# Debug
+    print(f"debug = {a=}")							# Debug
 
 
 def format_output(a, b):
@@ -60,11 +60,32 @@ def check_strings_value(name):
         print("This is a bad way to check strings.")
 
 
-def main(positional_argument):
-    print(f"Sys.argv[1:] values: {positional_argument} \n")
+def quotation_marks():
+    marks = """
+    You can use various types of quotation marks inside the expressions. 
+    Just make sure you are *not using the same type of quotation mark* on the outside of the f-string (for example) as you are using in the expression.
+    """
+    print(marks)
+
+
+def string_quotes():
+    quotes = """
+    In Python, single-quoted strings and double-quoted strings are the same.
+    Choose one and stick to it.
+
+    When a string contains single or double quote characters, use the other one to avoid backslashes in the string.
+    It improves readability.
+
+    For triple-quoted strings, always use double quote characters to be consistent with the docstring convention in PEP 257.
+    """
+    print(quotes)
+
+
+def main(positional_arguments):
+    print(f"Sys.argv[:] values: {positional_arguments} \n")
 
 
 if __name__ == "__main__":
-    main(sys.argv[1:])
+    main(sys.argv[:])
     strings_usage("Write good code.")
     check_strings_value("Marko")
