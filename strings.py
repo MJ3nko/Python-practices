@@ -20,7 +20,7 @@ def bool_comparison(greetings: bool) -> int:
 def strings_usage(string_param: str):
     a = 2
     b = 3.14
-    name = "Marko" * 1
+    name = "Marko" * 1    
 
     f_strings_output(a, b)
     format_output(a, b)
@@ -34,8 +34,8 @@ def f_strings_output(a, b):
 
 
 def format_output(a, b):
-    print('a = {x}, b = {y:y} !'.format(x=a, y=b))  # Python 2.6+
-    print('a = ' + str(a) + ', b = ' + str(b))		# String conversion required
+    print('a = {x}, b = {y} !'.format(x=a, y=b))    # Python 2.6+
+    print('a = ' + str(a) + ', b = ' + str(b))	    # String conversion required
 
 
 def vanilla_output(a, name):

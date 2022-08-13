@@ -21,9 +21,10 @@ def reverse_and_print_gradebook(full_gradebook):
 
 
 def for_loop(gradebook):
-    print("Printing gradebook:\n")
+    print("Printing gradebook:")
     for index in range(len(gradebook)):
-        print(index)
+        print(gradebook[index])
+    print()
 
 
 def unpack_argument_list():
