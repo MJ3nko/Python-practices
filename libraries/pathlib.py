@@ -6,13 +6,13 @@ Python 3.4+
 """
 
 
-def print_folder(folder_name):
+def return_folder(folder_name):
     path = Path(folder_name)
     print(path)
     return path
 
 
-def print_complex_path(path):
+def return_complex_path(path):
     path = path / 'Default' / 'AppData'
     print(path)
     return path
@@ -22,8 +22,13 @@ def print_absolute_path():
     print(path.resolve())
 
 
+def enumerate_path_characters(path):
+    for counter, entry in enumerate(str(path)):
+        print(f"{counter}: {entry}")
+
 if __name__ == "__main__":
     path = "C:\\Users"
-    path = print_folder(path)
-    path = print_complex_path(path)
-    path = print_absolute_path()
+    path = return_folder(path)
+    path = return_complex_path(path)
+    print_absolute_path()
+    enumerate_path_characters(path)
