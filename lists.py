@@ -6,6 +6,7 @@ def lists_usage():
     full_gradebook = create_and_return_gradebook(
         subjects, grades, last_semester_gradebook)
     reverse_and_print_gradebook(full_gradebook)
+    print()
 
 
 def create_and_return_gradebook(subjects, grades, last_semester_gradebook):
@@ -38,6 +39,15 @@ def return_sample_names():
     return zip(names, dog_names)
 
 
+def run_method(method):
+    usage_text = f"Do you want to execute {method}?\nEnter an option (y or n):"
+    while (selected_option := input(usage_text).lower()) not in ["n", "y"]:
+        print(f"{selected_option} is not supported. Try again.")
+    if selected_option == "y":
+        return True
+    return False
+
+
 def list_comprehension_usage_example():
     x = int(input())
     y = int(input())
@@ -45,12 +55,11 @@ def list_comprehension_usage_example():
     ignored_sum = int(input())
 
     combinations = [[a, b, c] for a in range(x+1) for b in range(y+1)
-               for c in range(z+1) if (a + b + c) != ignored_sum]
+                    for c in range(z+1) if (a + b + c) != ignored_sum]
     print(combinations)
 
 
 def print_second_largest_number():
-    number_of_entries = int(input())
     mapper = map(int, input().split())
     numbers = list(mapper)
     first = numbers[0]
@@ -63,17 +72,17 @@ def print_second_largest_number():
         elif first > number > second:
             second = number
 
-    print(second)
+    print(f"Second largest number: {second}")
 
 
 def main():
-    lists_usage()
-    print()
-    unpack_argument_list()
-    while (selected_option := input("Enter an option (y or n):").lower()) not in ["n", "y"]:
-        print(f"{selected_option} is not supported. Try again.")
-    if selected_option == "y":
+    if run_method(lists_usage.__name__):
+        lists_usage()
+    if run_method(unpack_argument_list.__name__):
+        unpack_argument_list()
+    if run_method(list_comprehension_usage_example.__name__):
         list_comprehension_usage_example()
+    if run_method(print_second_largest_number.__name__):
         print_second_largest_number()
 
 
