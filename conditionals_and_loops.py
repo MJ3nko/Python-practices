@@ -1,8 +1,8 @@
 def while_loop():
     # Notice how we need to ask for a value twice.
-    value = input("Enter a value: ")
+    value = int(input("Enter a value: "))
     while value != "0":
-        value = input("Enter a value: ")
+        value = int(input("Enter a value: "))
         print(f"Value {value}")
 
 
@@ -17,6 +17,9 @@ def walrus_operator():
 def for_loop():
     for _ in range(1):
         print("Underscore is a throwaway variable")
+
+    for value in range(0, 10, 2):
+        print(value)
 
 
 if __name__ == "__main__":
