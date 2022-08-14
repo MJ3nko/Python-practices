@@ -30,7 +30,8 @@ class Rectangle2:
     def area(self) -> float:
         return self.width * self.height
 
-# Instead of cluttering your code with constants, you can create an enumeration using the Enum class.
+# Instead of cluttering your code with constants,
+# you can create an enumeration using the Enum class.
 # An Enumeration is a set of symbolic names bound to unique, constant values.
 
 
@@ -63,10 +64,13 @@ def compare_class_objects():
     print(rectangle2)
     print(rectangle1 == rectangle2)
     del rectangle1, rectangle2
-    print("Deleted all objects.")
 
 
-if __name__ == "__main__":
+def main():
     number = 10
     object_type_comparison(number)
     compare_class_objects()
+
+
+if __name__ == "__main__":
+    main()

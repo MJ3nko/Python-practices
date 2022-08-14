@@ -22,7 +22,11 @@ def for_loop():
         print(value)
 
 
-if __name__ == "__main__":
+def main():
     while_loop()
     walrus_operator()
     for_loop()
+
+
+if __name__ == "__main__":
+    main()
