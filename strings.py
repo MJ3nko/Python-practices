@@ -3,7 +3,6 @@ import sys
 
 
 def bool_comparison(greetings: bool) -> int:
-
     # Good
     if greetings:
         return 0
