@@ -16,7 +16,7 @@ def walrus_operator():
 
 def for_loop():
     for _ in range(1):
-        print("Underscore is a throwaway variable")
+        print("Underscore is a throwaway variable.")
 
     for value in range(0, 10, 2):
         print(value)

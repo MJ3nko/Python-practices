@@ -1,8 +1,8 @@
 from openpyxl import Workbook
 from openpyxl.chart import BarChart, Reference
 
-wb = Workbook()
-ws = wb.active
+workbook = Workbook()
+worksheet = workbook.active
 
 data = [
     ["Fruit", "Quantity"],
@@ -22,10 +22,10 @@ data = [
     ["Banana", 3]
 ]
 
-ws.freeze_panes = "A2"
+worksheet.freeze_panes = "A2"
 
-for r in data:
-    ws.append(r)
+for row in data:
+    worksheet.append(row)
 
 """
 # Insert a column before the existing column 1 ("A")
@@ -50,20 +50,20 @@ sheet.delete_rows(idx=1, amount=4)
 print_rows()
 
 """
-ws.auto_filter.ref = ws.dimensions  # Add filter to all cells
-ws.auto_filter.add_sort_condition("A1")
+worksheet.auto_filter.ref = worksheet.dimensions  # Add filter to all cells
+worksheet.auto_filter.add_sort_condition("A1")
 
 chart = BarChart()
-data = Reference(worksheet=ws,
+data = Reference(worksheet=worksheet,
                  min_row=1,
-                 max_row=int(ws.max_row),
+                 max_row=int(worksheet.max_row),
                  min_col=2,
                  max_col=2)
 
 chart.add_data(data, titles_from_data=True)
-ws.add_chart(chart, "E2")
-print(ws['A1'].value)
+worksheet.add_chart(chart, "E2")
+print(worksheet['A1'].value)
 
 
 print("In the previous line, the ws.dimensions contains all cells, that have data in it.")
-wb.save("Basic_excel.xlsx")
+workbook.save("Basic_excel.xlsx")

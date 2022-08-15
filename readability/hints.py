@@ -1,3 +1,6 @@
+from time import ctime
+
+
 def type_hint(name: str) -> str:
     # Make code more readable.
     # Python 3.5+
@@ -7,9 +10,9 @@ def type_hint(name: str) -> str:
 def readability_example():
     # Improve readability of large numbers.
     # Python 3.6+
-    x = 1_000_000
-    y = 1000000
-    print(x, y, x == y)
+    seconds_in_a_month = 2_629_743
+    million = 1000000
+    print(seconds_in_a_month, million, seconds_in_a_month == million)
 
 
 def print_comments_guidelines():
@@ -33,7 +36,14 @@ def print_comments_guidelines():
     print(comments)
 
 
+def pronounceable_names():
+
+    generated_timestamp = ctime()
+    print(f"Generated timestamp is: {generated_timestamp}")
+
+
 def main():
+    pronounceable_names()
     type_hint("Anonymous")
     readability_example()
     print_comments_guidelines()

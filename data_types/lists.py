@@ -40,8 +40,8 @@ def return_sample_names():
 
 
 def run_method(method):
-    usage_text = f"Do you want to execute {method}?\nEnter an option (y or n):"
-    while (selected_option := input(usage_text).lower()) not in ["n", "y"]:
+    usage_help = f"Do you want to execute {method}?\nEnter an option (y or n):"
+    while (selected_option := input(usage_help).lower()) not in ["n", "y"]:
         print(f"{selected_option} is not supported. Try again.")
     if selected_option == "y":
         return True
@@ -49,13 +49,13 @@ def run_method(method):
 
 
 def list_comprehension_usage_example():
-    x = int(input())
-    y = int(input())
-    z = int(input())
+    first = int(input())
+    second = int(input())
+    third = int(input())
     ignored_sum = int(input())
 
-    combinations = [[a, b, c] for a in range(x+1) for b in range(y+1)
-                    for c in range(z+1) if (a + b + c) != ignored_sum]
+    combinations = [[a, b, c] for a in range(first+1) for b in range(second+1)
+                    for c in range(third+1) if (a + b + c) != ignored_sum]
     print(combinations)
 
 
