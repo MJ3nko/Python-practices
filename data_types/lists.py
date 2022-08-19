@@ -75,6 +75,26 @@ def print_second_largest_number():
     print(f"Second largest number: {second}")
 
 
+def find_the_percentage():
+    n = int(input())
+    student_marks = {}
+    for _ in range(n):
+        name, *line = input().split()
+        scores = list(map(float, line))
+        student_marks[name] = scores
+    query_name = input()
+    average = return_average(student_marks[query_name])
+    print(f"{average:0.2f}")
+
+
+def return_average(student_marks):
+    sum = 0
+    for mark in student_marks:
+        sum += mark
+    average = sum / len(student_marks)
+    return average
+
+
 def main():
     if run_method(lists_usage.__name__):
         lists_usage()
