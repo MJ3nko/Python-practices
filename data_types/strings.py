@@ -85,6 +85,14 @@ def string_quotes():
     print(guideline)
 
 
+def swap_case():
+    s = input()
+    result = s.swapcase()
+    print(result)
+
+    return
+
+
 def main(positional_arguments):
     print(f"Sys.argv[:] values: {positional_arguments} \n")
     strings_usage("Write good code.")
