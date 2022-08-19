@@ -23,14 +23,6 @@ class Guideline:
         """
         print(guideline)
 
-    def check_strings_implementation(self, name):
-        prefix = "Mar"
-        suffix = "ko"
-        if name.startswith(prefix) and name.endswith(suffix):
-            print("This is a good way to check strings.")
-        if name[:3] == prefix:
-            print("This is a bad way to check strings.")
-
     def quotation_marks(self):
         guideline = """
         You can use various types of quotation marks inside the expressions.
@@ -52,6 +44,14 @@ class Guideline:
         to be consistent with the docstring convention in PEP 257.
         """
         print(guideline)
+
+    def check_strings_implementation(self, name):
+        prefix = "Mar"
+        suffix = "ko"
+        if name.startswith(prefix) and name.endswith(suffix):
+            print("This is a good way to check strings.")
+        if name[:3] == prefix:
+            print("This is a bad way to check strings.")
 
 
 def strings_usage(string_param: str):
@@ -101,10 +101,34 @@ def print_text():
     print(text)
 
 
+def split_and_join(line):
+    line = line.split(" ")
+    line = "-".join(line)
+    return line
+
+
+def find_string():
+    string = input().strip()
+    sub_string = input().strip()
+
+    count = count_substring(string, sub_string)
+    print(count)
+
+
+def count_substring(string, sub_string):
+    counter = 0
+    for index in range(0, len(string)):
+        look_string = string[index:index+len(sub_string)]
+        if look_string == sub_string:
+            counter += 1
+    return counter
+
+
 def main():
     positional_arguments = sys.argv[:]
     print(f"Sys.argv[:] values: {positional_arguments} \n")
     strings_usage("Write good code.")
+    find_string()
 
 
 if __name__ == "__main__":

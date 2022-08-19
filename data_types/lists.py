@@ -32,7 +32,7 @@ def print_for_loop_gradebook(gradebook):
 def unpack_argument_list():
     # Python 3.0+
     items = [1, "New", 3.21, 4, 5]
-    head, *body, tail = items       # 1 ["New", 3.21, 4] 5
+    head, *body, tail = items
 
 
 def return_sample_names():
