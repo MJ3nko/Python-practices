@@ -45,12 +45,8 @@ class Complex(object):
         imag_div = imag_numerator / denom
         return Complex(real_div, imag_div)
 
-    def mod(self):
-        a = self.real
-        b = self.imaginary
-        return Complex(math.sqrt(a ** 2 + b ** 2), 0)
-
     def __str__(self):
+        # Overloaded for str() operation
         if self.imaginary == 0:
             result = "%.2f+0.00i" % (self.real)
         elif self.real == 0:
@@ -63,6 +59,11 @@ class Complex(object):
         else:
             result = "%.2f-%.2fi" % (self.real, abs(self.imaginary))
         return result
+
+    def mod(self):
+        a = self.real
+        b = self.imaginary
+        return Complex(math.sqrt(a ** 2 + b ** 2), 0)
 
 
 if __name__ == '__main__':
