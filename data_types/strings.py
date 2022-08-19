@@ -2,7 +2,8 @@ import sys
 from string import Template
 
 
-def bool_comparison(value: bool) -> int:
+def bool_comparison_example(value: bool) -> int:
+    guideline = """
     # Good
     if value:
         return 0
@@ -14,37 +15,43 @@ def bool_comparison(value: bool) -> int:
     # Very bad, redundant code
     if value is True:
         return 2
+    """
+    print(guideline)
 
 
 def strings_usage(string_param: str):
-    a = 2
-    b = 3.14
+    favorite_number = 7
+    pi = 3.14159265359
     name = "Marko" * 1
 
-    f_strings_output(a, b)
-    format_output(a, b)
+    f_strings_output(favorite_number, pi)
+    format_output(favorite_number, pi)
     raw_string()
     template_strings_output(name)
-    vanilla_output(a, name)
+    legacy_output(favorite_number, name)
 
 
-def f_strings_output(a, b):
-    print(f"a = {a} and b = {b}")					# Python 3.6+
-    print(f"debug = {a=}")							# Debug
+def f_strings_output(favorite_number, pi):
+    # Python 3.6+
+    print(f"favorite number = {favorite_number} and pi = {pi}")
+    print(f"favorite number debug = {favorite_number=}")
 
 
-def format_output(a, b):
-    print("a = {x}, b = {y} !".format(x=a, y=b))    # Python 2.6+
-    print("a = " + str(a) + ", b = " + str(b))	    # String conversion required
+def format_output(favorite_number, pi):
+    # Python 2.6+
+    print("favorite number = {x}, pi = {y} !".format(
+        x=favorite_number, y=pi))
+    print("favorite number = " + str(favorite_number) +
+          ", pi = " + str(pi))
 
 
 def template_strings_output(name):
-    t = Template("Hey, $name!")
-    print(t.substitute(name=name))
+    template = Template("Hey, $name!")
+    print(template.substitute(name=name))
 
 
-def vanilla_output(value, name):
-    print("Hello, %s. A has %s value." % (name, value))
+def legacy_output(favorite_number, name):
+    print("Hello, %s. favorite number has %s value." % (name, favorite_number))
 
 
 def raw_string():
@@ -53,11 +60,11 @@ def raw_string():
 
 
 def check_strings_value(name):
-    first_part = "Mar"
-    second_part = "ko"
-    if name.startswith(first_part) and name.endswith(second_part):
+    first_name_part = "Mar"
+    second_name_part = "ko"
+    if name.startswith(first_name_part) and name.endswith(second_name_part):
         print("This is a good way to check strings.")
-    if name[:3] == first_part:
+    if name[:3] == first_name_part:
         print("This is a bad way to check strings.")
 
 
@@ -85,12 +92,11 @@ def string_quotes():
     print(guideline)
 
 
-def swap_case():
-    s = input()
-    result = s.swapcase()
-    print(result)
-
-    return
+def print_text():
+    text = input()
+    print(text)
+    text = text.swapcase()
+    print(text)
 
 
 def main(positional_arguments):
@@ -100,4 +106,5 @@ def main(positional_arguments):
 
 
 if __name__ == "__main__":
-    main(sys.argv[:])
+    positional_arguments = sys.argv[:]
+    main(positional_arguments)

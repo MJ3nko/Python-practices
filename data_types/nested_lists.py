@@ -1,16 +1,16 @@
 def get_second_lowest_grade(students):
     lowest_grade = students[0][1]
     second_lowest_grade = students[0][1]
-    for _, score in students:
-        if score == lowest_grade:
+    for _, grade in students:
+        if grade == lowest_grade:
             pass
-        elif score < lowest_grade:
+        elif grade < lowest_grade:
             second_lowest_grade = lowest_grade
-            lowest_grade = score
-        elif score < second_lowest_grade:
-            second_lowest_grade = score
+            lowest_grade = grade
+        elif grade < second_lowest_grade:
+            second_lowest_grade = grade
         elif lowest_grade == second_lowest_grade:
-            second_lowest_grade = score
+            second_lowest_grade = grade
     return second_lowest_grade
 
 
@@ -23,7 +23,7 @@ def get_second_lowest_grade_names(students, grade):
     return names
 
 
-def print_second_lowest_grade(students):
+def print_second_lowest_grade_names(students):
     grade = get_second_lowest_grade(students)
     names = get_second_lowest_grade_names(students, grade)
     for name in names:
@@ -36,4 +36,4 @@ if __name__ == '__main__':
         name = input()
         score = float(input())
         students.append([name, score])
-    print_second_lowest_grade(students)
+    print_second_lowest_grade_names(students)

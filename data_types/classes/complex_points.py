@@ -31,7 +31,7 @@ class Points(object):
 
 if __name__ == '__main__':
     points = list()
-    for i in range(4):
+    for _ in range(4):
         a = list(map(float, input().split()))
         points.append(a)
 
