@@ -1,3 +1,6 @@
+from dataclasses import dataclass
+
+
 def lists_usage():
     last_semester_gradebook = [
         ("politics", 80), ("latin", 96), ("dance", 97), ("architecture", 65)]
@@ -75,53 +78,56 @@ def print_second_largest_number():
     print(f"Second largest number: {second}")
 
 
-def find_the_percentage():
-    n = int(input())
-    student_marks = {}
-    for _ in range(n):
+def print_the_average_percentage():
+    number_of_lines = int(input())
+    student_score = {}
+    for _ in range(number_of_lines):
         name, *line = input().split()
         scores = list(map(float, line))
-        student_marks[name] = scores
+        student_score[name] = scores
     query_name = input()
-    average = return_average(student_marks[query_name])
+    average = return_average_student_score(student_score[query_name])
     print(f"{average:0.2f}")
 
 
-def return_average(student_marks):
+def return_average_student_score(student_scores):
     sum = 0
-    for mark in student_marks:
-        sum += mark
-    average = sum / len(student_marks)
+    for score in student_scores:
+        sum += score
+    average = sum / len(student_scores)
     return average
 
 
-def list_methods_usage():
-    command_numbers = int(input())
-    numbers = []
-    for _ in range(command_numbers):
-        command, *line = input().split()
-        handle_command(command, line, numbers)
+@dataclass
+class Numbers:
+    numbers = list
 
+    def list_methods_usage(self):
+        number_of_commands = int(input())
+        numbers = []
+        for _ in range(number_of_commands):
+            command, *line = input().split()
+            self.handle_command(command, line, numbers)
 
-def handle_command(command, line, numbers):
-    if command == "print":
-        print(numbers)
-    elif command == "insert":
-        position = int(line[0])
-        number = int(line[1])
-        numbers.insert(position, number)
-    elif command == "append":
-        number = int(line[0])
-        numbers.append(number)
-    elif command == "remove":
-        number = int(line[0])
-        numbers.remove(number)
-    elif command == "sort":
-        numbers.sort()
-    elif command == "reverse":
-        numbers.reverse()
-    elif command == "pop":
-        numbers.pop()
+    def handle_command(self, command, line, numbers):
+        if command == "print":
+            print(numbers)
+        elif command == "insert":
+            position = int(line[0])
+            number = int(line[1])
+            numbers.insert(position, number)
+        elif command == "append":
+            number = int(line[0])
+            numbers.append(number)
+        elif command == "remove":
+            number = int(line[0])
+            numbers.remove(number)
+        elif command == "sort":
+            numbers.sort()
+        elif command == "reverse":
+            numbers.reverse()
+        elif command == "pop":
+            numbers.pop()
 
 
 def main():
