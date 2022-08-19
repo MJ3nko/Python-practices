@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from enum import Enum
 
 
-class RectangleOne:
+class Rectangle:
     def __init__(
             self,
             color: str,
@@ -22,7 +22,7 @@ class RectangleOne:
 
 
 @dataclass
-class RectangleTwo:
+class Square:
     color: str
     width: float
     height: float
@@ -54,8 +54,8 @@ def object_type_comparison(obj: object):
 
 
 def compare_class_objects():
-    rectangle_one = RectangleOne("Blue", 2, 3)
-    rectangle_two = RectangleTwo("Blue", 2, 3)
+    rectangle_one = Rectangle("Blue", 2, 3)
+    rectangle_two = Square("Blue", 2, 3)
 
     # <__main__.Rectangle1 object at 0x00000212DC9C60E0>
     # Rectangle2(color='Blue', width=2, height=3)
