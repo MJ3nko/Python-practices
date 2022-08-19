@@ -44,7 +44,7 @@ def return_sample_names():
 
 def run_method(method):
     usage_help = f"Do you want to execute {method}?\nEnter an option (y or n):"
-    while (selected_option := input(usage_help).lower()) not in ["n", "y"]:
+    while (selected_option := input(usage_help).lower()) not in ["y", "n"]:
         print(f"{selected_option} is not supported. Try again.")
     if selected_option == "y":
         return True
@@ -102,32 +102,52 @@ def return_average_student_score(student_scores):
 class Numbers:
     numbers = list
 
+    def print(self):
+        print(self.numbers)
+
+    def insert(self, position, number):
+        self.numbers.insert(position, number)
+
+    def append(self, number):
+        self.numbers.append(number)
+
+    def remove(self, number):
+        self.numbers.remove(number)
+
+    def sort(self):
+        self.numbers.sort()
+
+    def reverse(self):
+        self.numbers.reverse()
+
+    def pop(self):
+        self.numbers.pop()
+
     def list_methods_usage(self):
         number_of_commands = int(input())
-        numbers = []
         for _ in range(number_of_commands):
             command, *line = input().split()
-            self.handle_command(command, line, numbers)
+            self.handle_command(command, line)
 
-    def handle_command(self, command, line, numbers):
+    def handle_command(self, command, line):
         if command == "print":
-            print(numbers)
+            self.print()
         elif command == "insert":
             position = int(line[0])
             number = int(line[1])
-            numbers.insert(position, number)
+            self.insert(position, number)
         elif command == "append":
             number = int(line[0])
-            numbers.append(number)
+            self.append(number)
         elif command == "remove":
             number = int(line[0])
-            numbers.remove(number)
+            self.remove(number)
         elif command == "sort":
-            numbers.sort()
+            self.sort()
         elif command == "reverse":
-            numbers.reverse()
+            self.reverse()
         elif command == "pop":
-            numbers.pop()
+            self.pop()
 
 
 def main():
