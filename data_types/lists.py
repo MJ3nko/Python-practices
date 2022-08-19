@@ -95,6 +95,35 @@ def return_average(student_marks):
     return average
 
 
+def list_methods_usage():
+    command_numbers = int(input())
+    numbers = []
+    for _ in range(command_numbers):
+        command, *line = input().split()
+        handle_command(command, line, numbers)
+
+
+def handle_command(command, line, numbers):
+    if command == "print":
+        print(numbers)
+    elif command == "insert":
+        position = int(line[0])
+        number = int(line[1])
+        numbers.insert(position, number)
+    elif command == "append":
+        number = int(line[0])
+        numbers.append(number)
+    elif command == "remove":
+        number = int(line[0])
+        numbers.remove(number)
+    elif command == "sort":
+        numbers.sort()
+    elif command == "reverse":
+        numbers.reverse()
+    elif command == "pop":
+        numbers.pop()
+
+
 def main():
     if run_method(lists_usage.__name__):
         lists_usage()
