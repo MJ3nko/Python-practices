@@ -65,5 +65,6 @@ worksheet.add_chart(chart, "E2")
 print(worksheet['A1'].value)
 
 
-print("In the previous line, the ws.dimensions contains all cells, that have data in it.")
+print("In the previous line, the ws.dimensions contains all cells, \
+       that have data in it.")
 workbook.save("Basic_excel.xlsx")
