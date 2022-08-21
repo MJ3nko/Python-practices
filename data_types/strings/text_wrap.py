@@ -24,9 +24,13 @@ def textwrap_string(string, max_width):
     return string
 
 
-if __name__ == '__main__':
+def main():
     string, max_width = input(), int(input())
-    result = wrap_string(string, max_width)
-    print(result)
-    result = textwrap_string(string, max_width)
-    print(result)
+    lines = wrap_string(string, max_width)
+    print(lines)
+    lines = textwrap_string(string, max_width)
+    print(lines)
+
+
+if __name__ == '__main__':
+    main()
