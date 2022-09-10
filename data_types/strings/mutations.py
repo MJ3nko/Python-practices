@@ -1,11 +1,3 @@
-def guideline():
-    guideline = """
-    Lists are mutable and tuples are immutable.
-    """
-
-    print(guideline)
-
-
 def change_character(string: str, index: int, char: str) -> str:
     string = list(string)
     string[index] = char

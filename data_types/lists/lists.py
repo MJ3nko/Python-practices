@@ -1,4 +1,8 @@
-from dataclasses import dataclass
+def guideline():
+    guideline = """
+    Lists are mutable and tuples are immutable.
+    """
+    print(guideline)
 
 
 def lists_usage():
@@ -96,58 +100,6 @@ def return_average_student_score(student_scores):
         sum += score
     average = sum / len(student_scores)
     return average
-
-
-@dataclass
-class Numbers:
-    numbers = list
-
-    def print(self):
-        print(self.numbers)
-
-    def insert(self, position, number):
-        self.numbers.insert(position, number)
-
-    def append(self, number):
-        self.numbers.append(number)
-
-    def remove(self, number):
-        self.numbers.remove(number)
-
-    def sort(self):
-        self.numbers.sort()
-
-    def reverse(self):
-        self.numbers.reverse()
-
-    def pop(self):
-        self.numbers.pop()
-
-    def list_methods_usage(self):
-        number_of_commands = int(input())
-        for _ in range(number_of_commands):
-            command, *line = input().split()
-            self.handle_command(command, line)
-
-    def handle_command(self, command, line):
-        if command == "print":
-            self.print()
-        elif command == "insert":
-            position = int(line[0])
-            number = int(line[1])
-            self.insert(position, number)
-        elif command == "append":
-            number = int(line[0])
-            self.append(number)
-        elif command == "remove":
-            number = int(line[0])
-            self.remove(number)
-        elif command == "sort":
-            self.sort()
-        elif command == "reverse":
-            self.reverse()
-        elif command == "pop":
-            self.pop()
 
 
 def main():
