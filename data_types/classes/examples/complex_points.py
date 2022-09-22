@@ -29,7 +29,7 @@ class Points(object):
         return pow((self.x ** 2 + self.y ** 2 + self.z ** 2), 0.5)
 
 
-if __name__ == '__main__':
+def main():
     points = list()
     for _ in range(4):
         a = list(map(float, input().split()))
@@ -43,3 +43,7 @@ if __name__ == '__main__':
     angle = math.acos(x.dot(y) / (x.absolute() * y.absolute()))
 
     print("%.2f" % math.degrees(angle))
+
+
+if __name__ == '__main__':
+    main()

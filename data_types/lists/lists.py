@@ -16,15 +16,15 @@ def lists_usage():
     print()
 
 
+def reverse_and_print_gradebook(full_gradebook):
+    full_gradebook.sort(reverse=True)
+    print_for_loop_gradebook(full_gradebook)
+
+
 def create_and_return_gradebook(subjects, grades, last_semester_gradebook):
     gradebook = list(zip(subjects, grades))
     full_gradebook = gradebook + last_semester_gradebook
     return full_gradebook
-
-
-def reverse_and_print_gradebook(full_gradebook):
-    full_gradebook.sort(reverse=True)
-    print_for_loop_gradebook(full_gradebook)
 
 
 def print_for_loop_gradebook(gradebook):

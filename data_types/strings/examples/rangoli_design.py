@@ -1,3 +1,9 @@
+def print_rangoli(size):
+    highest_char = ord("a") + size - 1
+    print_top_half(size, highest_char)
+    print_bottom_half(size, highest_char)
+
+
 def print_top_half(size, highest_char):
     for distance in range(size - 1, -1, -1):
         write_line(distance, highest_char)
@@ -24,12 +30,6 @@ def return_alpha_chars(starting_char, end_char):
     for char in range(starting_char, end_char, -1):
         line += f"{chr(char)}-"
     return line
-
-
-def print_rangoli(size):
-    highest_char = ord("a") + size - 1
-    print_top_half(size, highest_char)
-    print_bottom_half(size, highest_char)
 
 
 if __name__ == '__main__':

@@ -1,3 +1,10 @@
+def print_second_lowest_grade_names(students):
+    grade = get_second_lowest_grade(students)
+    names = get_second_lowest_grade_names(students, grade)
+    for name in names:
+        print(name)
+
+
 def get_second_lowest_grade(students):
     lowest_grade = students[0][1]
     second_lowest_grade = students[0][1]
@@ -23,17 +30,14 @@ def get_second_lowest_grade_names(students, grade):
     return names
 
 
-def print_second_lowest_grade_names(students):
-    grade = get_second_lowest_grade(students)
-    names = get_second_lowest_grade_names(students, grade)
-    for name in names:
-        print(name)
-
-
-if __name__ == '__main__':
+def main():
     students = []
     for _ in range(int(input())):
         name = input()
         score = float(input())
         students.append([name, score])
     print_second_lowest_grade_names(students)
+
+
+if __name__ == '__main__':
+    main()

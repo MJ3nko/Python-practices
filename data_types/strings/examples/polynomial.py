@@ -1,13 +1,10 @@
-def execute_operation(result, operation, number):
-    if operation == "+" or operation == "":
-        result += number
-    elif operation == "-":
-        result -= number
-    elif operation == "*":
-        result *= number
-    elif operation == "/":
-        result /= number
-    return result
+def polynomial(x_k, p):
+    x = int(x_k[0])
+    k = int(x_k[1])
+    result = poly_sum(int(x), p)
+    if result == k:
+        return True
+    return False
 
 
 def poly_sum(x, p):
@@ -35,13 +32,16 @@ def poly_sum(x, p):
     return result
 
 
-def polynomial(x_k, p):
-    x = int(x_k[0])
-    k = int(x_k[1])
-    result = poly_sum(int(x), p)
-    if result == k:
-        return True
-    return False
+def execute_operation(result, operation, number):
+    if operation == "+" or operation == "":
+        result += number
+    elif operation == "-":
+        result -= number
+    elif operation == "*":
+        result *= number
+    elif operation == "/":
+        result /= number
+    return result
 
 
 def main():

@@ -1,8 +1,3 @@
-def add_spaces(value, width):
-    value = " " * (width - len(value)) + value
-    return value
-
-
 def print_formatted(number):
     width = len(str(bin(number).split(sep="b")[1]))
     for value in range(1, number + 1):
@@ -16,6 +11,11 @@ def print_formatted(number):
         hexadecimal = add_spaces(hexadecimal, width)
         binary = add_spaces(binary, width)
         print(f"{decimal} {octal} {hexadecimal} {binary}")
+
+
+def add_spaces(value, width):
+    value = " " * (width - len(value)) + value
+    return value
 
 
 if __name__ == '__main__':

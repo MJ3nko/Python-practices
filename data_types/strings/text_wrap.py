@@ -1,11 +1,6 @@
 import textwrap
 
 
-def join_lines(lines):
-    lines = "\n".join(lines)
-    return lines
-
-
 def wrap_string(string, max_width):
     lines = []
     line_count = int(len(string) / max_width) + 1
@@ -22,6 +17,11 @@ def textwrap_string(string, max_width):
     string = textwrap.wrap(string, max_width)
     string = join_lines(string)
     return string
+
+
+def join_lines(lines):
+    lines = "\n".join(lines)
+    return lines
 
 
 def main():

@@ -80,6 +80,11 @@ def format_output(favorite_number: int, pi: float):
           ", pi = " + str(pi))
 
 
+def raw_string():
+    raw_string = r"Look at all these \n \x \\\ values."
+    print(raw_string)
+
+
 def template_strings_output(name: str):
     template = Template("Hey, $name!")
     print(template.substitute(name=name))
@@ -87,11 +92,6 @@ def template_strings_output(name: str):
 
 def legacy_output(favorite_number: int, name: str):
     print("Hello, %s. favorite number has %s value." % (name, favorite_number))
-
-
-def raw_string():
-    raw_string = r"Look at all these \n \x \\\ values."
-    print(raw_string)
 
 
 def main():
