@@ -1,6 +1,12 @@
 from time import ctime
 
 
+def pronounceable_names():
+
+    generated_timestamp = ctime()
+    print(f"Generated timestamp is: {generated_timestamp}")
+
+
 def type_hint(name: str) -> str:
     # Make code more readable.
     # Python 3.5+
@@ -36,10 +42,14 @@ def print_comments_guidelines():
     print(comments)
 
 
-def pronounceable_names():
+def stepdown():
 
-    generated_timestamp = ctime()
-    print(f"Generated timestamp is: {generated_timestamp}")
+    comments = """
+    Use the stepdown rule for class methods and other functions.
+    Follow the public, private, public method and so forth arrangement in the code.
+    """
+
+    print(comments)
 
 
 def main():
@@ -47,6 +57,7 @@ def main():
     type_hint("Anonymous")
     readability_example()
     print_comments_guidelines()
+    stepdown()
 
 
 if __name__ == "__main__":
