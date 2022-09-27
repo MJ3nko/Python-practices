@@ -46,7 +46,7 @@ def stepdown():
 
     comments = """
     Use the stepdown rule for class methods and other functions.
-    Follow the public, private, public method and so forth arrangement in the code.
+    Follow the public, private, public method arrangement in the code.
     """
 
     print(comments)
