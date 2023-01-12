@@ -3,7 +3,7 @@ from dataclasses import dataclass
 
 @dataclass
 class Numbers:
-    numbers = list
+    numbers = []
 
     def print(self):
         print(self.numbers)
@@ -32,22 +32,34 @@ class Numbers:
             command, *line = input().split()
             self.handle_command(command, line)
 
-    def handle_command(self, command, line):
+    def handle_command(self, command, line=None):
         if command == "print":
             self.print()
-        elif command == "insert":
-            position = int(line[0])
-            number = int(line[1])
-            self.insert(position, number)
-        elif command == "append":
-            number = int(line[0])
-            self.append(number)
-        elif command == "remove":
-            number = int(line[0])
-            self.remove(number)
-        elif command == "sort":
-            self.sort()
-        elif command == "reverse":
-            self.reverse()
-        elif command == "pop":
-            self.pop()
+        if line:
+            if command == "insert":
+                position = int(line[0])
+                number = int(line[1])
+                self.insert(position, number)
+            elif command == "append":
+                number = int(line)
+                self.append(number)
+            elif command == "remove":
+                number = int(line)
+                self.remove(number)
+            elif command == "sort":
+                self.sort()
+            elif command == "reverse":
+                self.reverse()
+            elif command == "pop":
+                self.pop()
+
+
+def main():
+    new = Numbers()
+    new.handle_command("append", 10)
+    new.handle_command("insert", [1, 12])
+    new.handle_command("print")
+
+
+if __name__ == '__main__':
+    main()
