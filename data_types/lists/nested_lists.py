@@ -39,5 +39,5 @@ def main():
     print_second_lowest_grade_names(students)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

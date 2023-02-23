@@ -7,11 +7,16 @@ def guideline():
 
 def lists_usage():
     last_semester_gradebook = [
-        ("politics", 80), ("latin", 96), ("dance", 97), ("architecture", 65)]
+        ("politics", 80),
+        ("latin", 96),
+        ("dance", 97),
+        ("architecture", 65),
+    ]
     subjects = ["physics", "calculus", "poetry", "history"]
     grades = [98, 97, 85, 88]
     full_gradebook = create_and_return_gradebook(
-        subjects, grades, last_semester_gradebook)
+        subjects, grades, last_semester_gradebook
+    )
     reverse_and_print_gradebook(full_gradebook)
     print()
 
@@ -61,8 +66,13 @@ def list_comprehension_usage_example():
     third = int(input())
     ignored_sum = int(input())
 
-    combinations = [[a, b, c] for a in range(first+1) for b in range(second+1)
-                    for c in range(third+1) if (a + b + c) != ignored_sum]
+    combinations = [
+        [a, b, c]
+        for a in range(first + 1)
+        for b in range(second + 1)
+        for c in range(third + 1)
+        if (a + b + c) != ignored_sum
+    ]
     print(combinations)
 
 

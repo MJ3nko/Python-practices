@@ -6,7 +6,8 @@ def change_character(string: str, index: int, char: str) -> str:
 
 
 def slice_string_and_join_character(string: str, index: int, char: str) -> str:
-    string = string[:index] + char + string[index+1:]
+    next_index = index + 1
+    string = string[:index] + char + string[next_index:]
     return string
 
 
@@ -18,5 +19,5 @@ def main():
     print(new_string)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

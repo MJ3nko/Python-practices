@@ -18,6 +18,6 @@ def add_spaces(value, width):
     return value
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     number = int(input())
     print_formatted(number)

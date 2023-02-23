@@ -7,6 +7,6 @@ def reverse_array(array: list):
     return array
 
 
-array = input().strip().split(' ')
+array = input().strip().split(" ")
 array = reverse_array(array)
 print(array)

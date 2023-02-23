@@ -2,7 +2,6 @@ from time import ctime
 
 
 def pronounceable_names():
-
     generated_timestamp = ctime()
     print(f"Generated timestamp is: {generated_timestamp}")
 
@@ -22,7 +21,6 @@ def readability_example():
 
 
 def print_comments_guidelines():
-
     comments = """
     Comments should be complete sentences.
     Comments that contradict the code are worse than no comments.
@@ -43,7 +41,6 @@ def print_comments_guidelines():
 
 
 def stepdown():
-
     comments = """
     Use the stepdown rule for class methods and other functions.
     Follow the public, private, public method arrangement in the code.

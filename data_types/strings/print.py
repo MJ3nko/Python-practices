@@ -74,10 +74,8 @@ def f_strings_output(favorite_number: int, pi: float):
 
 def format_output(favorite_number: int, pi: float):
     # Python 2.6+
-    print("favorite number = {x}, pi = {y} !".format(
-        x=favorite_number, y=pi))
-    print("favorite number = " + str(favorite_number) +
-          ", pi = " + str(pi))
+    print("favorite number = {x}, pi = {y} !".format(x=favorite_number, y=pi))
+    print("favorite number = " + str(favorite_number) + ", pi = " + str(pi))
 
 
 def raw_string():

@@ -9,7 +9,7 @@ def distinct_countries(n):
     return distinct_countries
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     n = int(input())
     result = distinct_countries(n)
     print(result)

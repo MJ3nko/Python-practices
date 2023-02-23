@@ -16,7 +16,7 @@ def is_size_available(shoe_size: int, shoes_inventory: Counter) -> bool:
     if shoe_size in shoes_inventory.keys():
         shoes_inventory[shoe_size] -= 1
         if shoes_inventory[shoe_size] == 0:
-            del (shoes_inventory[shoe_size])
+            del shoes_inventory[shoe_size]
         return True
     return False
 
