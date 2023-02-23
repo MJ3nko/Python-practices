@@ -26,7 +26,7 @@ class Points(object):
         return Points(x, y, z)
 
     def absolute(self):
-        return pow((self.x ** 2 + self.y ** 2 + self.z ** 2), 0.5)
+        return pow((self.x**2 + self.y**2 + self.z**2), 0.5)
 
 
 def main():
@@ -35,7 +35,10 @@ def main():
         a = list(map(float, input().split()))
         points.append(a)
 
-    a, b, c, d = Points(*points[0]), Points(*points[1]),
+    a, b, c, d = (
+        Points(*points[0]),
+        Points(*points[1]),
+    )
     Points(*points[2]), Points(*points[3])
 
     x = (b - a).cross(c - b)
@@ -45,5 +48,5 @@ def main():
     print("%.2f" % math.degrees(angle))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

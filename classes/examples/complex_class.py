@@ -63,12 +63,12 @@ class Complex(object):
     def mod(self):
         a = self.real
         b = self.imaginary
-        return Complex(math.sqrt(a ** 2 + b ** 2), 0)
+        return Complex(math.sqrt(a**2 + b**2), 0)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     c = map(float, input().split())
     d = map(float, input().split())
     x = Complex(*c)
     y = Complex(*d)
-    print(*map(str, [x+y, x-y, x*y, x/y, x.mod(), y.mod()]), sep='\n')
+    print(*map(str, [x + y, x - y, x * y, x / y, x.mod(), y.mod()]), sep="\n")
