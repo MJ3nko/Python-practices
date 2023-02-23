@@ -19,7 +19,7 @@ data = [
     ["Blackberry", 3],
     ["Orange", 3],
     ["Raspberry", 3],
-    ["Banana", 3]
+    ["Banana", 3],
 ]
 
 worksheet.freeze_panes = "A2"
@@ -54,17 +54,17 @@ worksheet.auto_filter.ref = worksheet.dimensions  # Add filter to all cells
 worksheet.auto_filter.add_sort_condition("A1")
 
 chart = BarChart()
-data = Reference(worksheet=worksheet,
-                 min_row=1,
-                 max_row=int(worksheet.max_row),
-                 min_col=2,
-                 max_col=2)
+data = Reference(
+    worksheet=worksheet, min_row=1, max_row=int(worksheet.max_row), min_col=2, max_col=2
+)
 
 chart.add_data(data, titles_from_data=True)
 worksheet.add_chart(chart, "E2")
-print(worksheet['A1'].value)
+print(worksheet["A1"].value)
 
 
-print("In the previous line, the ws.dimensions contains all cells, \
-       that have data in it.")
+print(
+    "In the previous line, the ws.dimensions contains all cells, \
+       that have data in it."
+)
 workbook.save("Basic_excel.xlsx")

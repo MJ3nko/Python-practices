@@ -13,7 +13,7 @@ def return_folder_path(folder_name: str) -> Path:
 
 
 def return_complex_path(path):
-    path = path / 'Default' / 'AppData'
+    path = path / "Default" / "AppData"
     return path
 
 
