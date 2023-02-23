@@ -15,3 +15,5 @@ python setup.py install                 # Install package directly
 # Generate required libraries list
 
 pip freeze > requirements.txt           # Generate required packages file
+
+# Formatter - use black instead of autopep8 that does minimal work
