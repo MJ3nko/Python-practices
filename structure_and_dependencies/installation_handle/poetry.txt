@@ -6,3 +6,5 @@ poetry new project-name          # Start a new Python project
 poetry init                      # Use on existing project to generate pyproject.toml
 
 poetry add black                 # Add package black to the project
+
+poetry install                   # Install dependencies
