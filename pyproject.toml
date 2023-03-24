@@ -1,22 +1,18 @@
-[project]
-# pip python-practices
+[tool.poetry]
 name = "python-practices"
-version = "1.0.0"
-description = "A sample Python project"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
 readme = "README.md"
-requires-python = ">=3.11"
-license = { file = "LICENSE.txt" }
-authors = [{ name = "Marko" }]
-classifiers = [
-    "Development Status :: 3 - Alpha",
-    "Topic :: Software Development :: Build Tools",
-    "License :: OSI Approved :: MIT License",
-    "Programming Language :: Python :: 3.11",
-]
+packages = [{include = "python_practices"}]
 
-dependencies = ["autopep8", "black", "flake8", "numpy", "openpyxl", "requests"]
+[tool.poetry.dependencies]
+python = "^3.11"
+black = "^23.1.0"
+autopep8 = "^2.0.2"
+requests = "^2.28.2"
 
-# If we were using setuptools
-# [build-system]
-# requires = ["setuptools>=63.0.0", "wheel"]
-# build-backend = "setuptools.build_meta"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
