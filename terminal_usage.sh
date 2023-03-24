@@ -14,7 +14,5 @@ pip3 install <package name>             # Download modules from PyPI
 pip3 show <package name>                # Detailed info about the package
 python setup.py install                 # Install package directly
 
-
-# FORMATTER
-# Use black instead of autopep8 that does minimal work
-# 
+pip install black
+pip install autopep8
