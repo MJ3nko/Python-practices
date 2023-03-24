@@ -22,3 +22,4 @@ messages.add_command(welcome)
 
 if __name__ == "__main__":
     messages()
+    print("Meant to replace argparse or make it more clean to develop.")
