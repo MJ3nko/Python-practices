@@ -1,6 +1,6 @@
 # https://www.pythoncheatsheet.org/blog/python-projects-with-poetry-and-vscode-part-1
 
-pip install poetry
+pip install poetry               # Install Poetry with Pip
 
 poetry new project-name          # Start a new Python project
 poetry init                      # Use on existing project to generate pyproject.toml
