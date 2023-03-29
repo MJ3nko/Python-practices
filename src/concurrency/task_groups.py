@@ -58,9 +58,8 @@ async def search():
         tp = tg.create_task(search_podcast(text, "search.talkpython.fm"))
         pb = tg.create_task(search_podcast(text, "search.pythonbytes.fm"))
 
-    # results = await asyncio.gather(tp, pb)
-    # pprint(results)
-    # return
+    results = await asyncio.gather(tp, pb)
+    pprint(results)
 
     print("Done with search.")
     print()
