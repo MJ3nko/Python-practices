@@ -1,0 +1,2 @@
+Usage of pipx and specialist to convert start to final, thus gain better speed.
+https://github.com/brandtbucher/specialist
