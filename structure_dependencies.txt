@@ -8,3 +8,11 @@ poetry init                      # Use on existing project to generate pyproject
 poetry add black                 # Add package black to the project
 
 poetry install                   # Install dependencies
+poetry update                    # Check for new dependency versions
+
+
+
+----
+
+autopep8                         # Linter in this project
+black                            # Formatter in this project, use format on save in settings
