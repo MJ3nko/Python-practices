@@ -18,7 +18,7 @@ def poly_sum(x, p):
             result = execute_operation(result, operation, number)
         elif "**" in word:
             potenca = int(word.split("**")[1])
-            number = x ** potenca
+            number = x**potenca
             result = execute_operation(result, operation, number)
         elif word in ["+", "-", "*", "/"]:
             operation = word

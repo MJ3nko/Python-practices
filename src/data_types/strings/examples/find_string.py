@@ -9,7 +9,7 @@ def find_string():
 def count_substring(string, sub_string):
     counter = 0
     for index in range(0, len(string)):
-        look_string = string[index:index+len(sub_string)]
+        look_string = string[index : index + len(sub_string)]
         if look_string == sub_string:
             counter += 1
     return counter

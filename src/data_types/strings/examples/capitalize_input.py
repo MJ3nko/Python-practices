@@ -1,5 +1,6 @@
 #!/bin/python3
 
+
 def first_solution(line: str):
     words = line.split(sep=" ")
     sentence = []
@@ -19,7 +20,7 @@ def second_solution(line: str):
     return words
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     line = input()
     result = first_solution(line)
     print(result)

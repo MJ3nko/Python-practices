@@ -32,6 +32,6 @@ def return_alpha_chars(starting_char, end_char):
     return line
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     number = int(input())
     print_rangoli(number)
