@@ -1,22 +1,14 @@
 def change_character(string: str, index: int, char: str) -> str:
-    string = list(string)
-    string[index] = char
-    string = "".join(string)
-    return string
-
-
-def slice_string_and_join_character(string: str, index: int, char: str) -> str:
-    next_index = index + 1
-    string = string[:index] + char + string[next_index:]
-    return string
+    return string[:index] + char + string[index + 1:]
 
 
 def main():
-    string = input()
-    index, char = input().split()
-    new_string = change_character(string, int(index), char)
-    new_string = slice_string_and_join_character(string, int(index), char)
-    print(new_string)
+    string = input("Enter the string: ")
+    index, char = input("Enter the index and character separated by space: ").split()
+    index = int(index)
+    
+    new_string = change_character(string, index, char)
+    print("Modified string:", new_string)
 
 
 if __name__ == "__main__":

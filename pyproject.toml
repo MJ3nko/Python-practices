@@ -1,28 +1,32 @@
 [tool.poetry]
 name = "python-practices"
 version = "0.1.0"
-description = ""
+description = "A collection of Python practice projects."
 authors = ["Your Name <you@example.com>"]
 readme = "README.md"
 packages = [{include = "python_practices"}]
 
 [tool.poetry.dependencies]
 python = ">=3.12"
-requests = "*"
-numpy = "*"
-click = "*"
-openpyxl = "*"
-httpx = "*"
-pydantic = "*"
+requests = "^2.26.0"
+numpy = "^1.21.0"
+click = "^8.0.0"
+openpyxl = "^3.0.0"
+httpx = "^0.21.0"
+pydantic = "^1.8.0"
 ruff = "^0.3.3"
 mypy = "^1.9.0"
 
-
 [tool.poetry.group.dev.dependencies]
-autopep8 = "*"
-black = "*"
-flake8 = "*"
+autopep8 = "^1.5.7"
+black = "^21.9b0"
+flake8 = "^3.9.2"
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.classifiers]
+"Programming Language :: Python :: 3"
+"License :: OSI Approved :: MIT License"
+"Operating System :: OS Independent"

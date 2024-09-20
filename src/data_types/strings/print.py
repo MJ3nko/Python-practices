@@ -3,10 +3,7 @@ from string import Template
 
 
 class Guideline:
-    def __init__(self) -> None:
-        pass
-
-    def bool_comparison_example(self):
+    def bool_comparison_example(self) -> None:
         guideline = """
         value = 0
         # Good
@@ -23,7 +20,7 @@ class Guideline:
         """
         print(guideline)
 
-    def quotation_marks(self):
+    def quotation_marks(self) -> None:
         guideline = """
         You can use various types of quotation marks inside the expressions.
         Just make sure you are not using the same type of quotation mark
@@ -31,7 +28,7 @@ class Guideline:
         """
         print(guideline)
 
-    def string_quotes(self):
+    def string_quotes(self) -> None:
         guideline = """
         Single-quoted strings and double-quoted strings are the same.
         Choose one and stick to it.
@@ -45,7 +42,7 @@ class Guideline:
         """
         print(guideline)
 
-    def check_strings_implementation(self, name):
+    def check_strings_implementation(self, name: str) -> None:
         prefix = "Mar"
         suffix = "ko"
         if name.startswith(prefix) and name.endswith(suffix):
@@ -54,10 +51,10 @@ class Guideline:
             print("This is a bad way to check strings.")
 
 
-def strings_usage(string_param: str):
+def strings_usage(string_param: str) -> None:
     favorite_number = 7
     pi = 3.14159265359
-    name = "Marko" * 1
+    name = "Marko"
 
     f_strings_output(favorite_number, pi)
     format_output(favorite_number, pi)
@@ -66,33 +63,36 @@ def strings_usage(string_param: str):
     legacy_output(favorite_number, name)
 
 
-def f_strings_output(favorite_number: int, pi: float):
-    # Python 3.6+
+def f_strings_output(favorite_number: int, pi: float) -> None:
+    """Demonstrates f-string usage."""
     print(f"favorite number = {favorite_number} and pi = {pi}")
     print(f"favorite number debug = {favorite_number=}")
 
 
-def format_output(favorite_number: int, pi: float):
-    # Python 2.6+
+def format_output(favorite_number: int, pi: float) -> None:
+    """Demonstrates str.format() usage."""
     print("favorite number = {x}, pi = {y} !".format(x=favorite_number, y=pi))
-    print("favorite number = " + str(favorite_number) + ", pi = " + str(pi))
+    print(f"favorite number = {favorite_number}, pi = {pi}")
 
 
-def raw_string():
+def raw_string() -> None:
+    """Demonstrates raw string usage."""
     raw_string = r"Look at all these \n \x \\\ values."
     print(raw_string)
 
 
-def template_strings_output(name: str):
+def template_strings_output(name: str) -> None:
+    """Demonstrates Template strings usage."""
     template = Template("Hey, $name!")
     print(template.substitute(name=name))
 
 
-def legacy_output(favorite_number: int, name: str):
+def legacy_output(favorite_number: int, name: str) -> None:
+    """Demonstrates legacy string formatting."""
     print("Hello, %s. favorite number has %s value." % (name, favorite_number))
 
 
-def main():
+def main() -> None:
     positional_arguments = sys.argv[:]
     print(f"Sys.argv[:] values: {positional_arguments} \n")
     strings_usage("Write good code.")

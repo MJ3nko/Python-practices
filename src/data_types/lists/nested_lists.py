@@ -1,40 +1,24 @@
 def print_second_lowest_grade_names(students):
-    grade = get_second_lowest_grade(students)
-    names = get_second_lowest_grade_names(students, grade)
-    for name in names:
+    second_lowest_grade = get_second_lowest_grade(students)
+    names = get_students_with_grade(students, second_lowest_grade)
+    for name in sorted(names):
         print(name)
 
 
 def get_second_lowest_grade(students):
-    lowest_grade = students[0][1]
-    second_lowest_grade = students[0][1]
-    for _, grade in students:
-        if grade == lowest_grade:
-            pass
-        elif grade < lowest_grade:
-            second_lowest_grade = lowest_grade
-            lowest_grade = grade
-        elif grade < second_lowest_grade:
-            second_lowest_grade = grade
-        elif lowest_grade == second_lowest_grade:
-            second_lowest_grade = grade
-    return second_lowest_grade
+    grades = sorted(set(score for _, score in students))
+    return grades[1] if len(grades) > 1 else None
 
 
-def get_second_lowest_grade_names(students, grade):
-    names = []
-    for name, score in students:
-        if grade == score:
-            names.append(name)
-    names.sort()
-    return names
+def get_students_with_grade(students, grade):
+    return [name for name, score in students if score == grade]
 
 
 def main():
     students = []
-    for _ in range(int(input())):
-        name = input()
-        score = float(input())
+    for _ in range(int(input("Enter number of students: "))):
+        name = input("Enter student name: ")
+        score = float(input("Enter student score: "))
         students.append([name, score])
     print_second_lowest_grade_names(students)
 

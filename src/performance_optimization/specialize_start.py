@@ -1,17 +1,15 @@
-import datetime
+import timeit
 import math
 
 
 def f_to_c(f: float) -> float:
     """Convert Fahrenheit to Celsius."""
-    x = f - 32
-    return x * 5 / 9
+    return (f - 32) * 5 / 9
 
 
 def c_to_f(c: float) -> float:
     """Convert Celsius to Fahrenheit."""
-    x = c * 9 / 5
-    return x + 32
+    return c * 9 / 5 + 32
 
 
 TEST_VALUES = [-459.67, -273.15, 0.0, 32.0, 42.0, 273.15, 100.0, 212.0, 373.15]
@@ -24,7 +22,7 @@ def test_conversions() -> None:
 
 def test_speed():
     count = int(1_000_000 / len(TEST_VALUES))
-    for _ in range(0, count):
+    for _ in range(count):
         for t in TEST_VALUES:
             round_trip(t)
 
@@ -45,11 +43,7 @@ def assert_round_trip(t: float) -> None:
 
 
 if __name__ == "__main__":
-    t0 = datetime.datetime.now()
-
     test_conversions()
-    test_speed()
 
-    t1 = datetime.datetime.now()
-    dt = t1 - t0
-    print(f"Done in {dt.total_seconds() * 1000:.2f} ms")
+    duration = timeit.timeit("test_speed()", globals=globals(), number=1)
+    print(f"Done in {duration * 1000:.2f} ms")
