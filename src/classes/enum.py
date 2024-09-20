@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import IntEnum
 
 
-class RequestStatus(Enum):
+class RequestStatus(IntEnum):
     HTTP_200 = 200
     HTTP_403 = 403
     HTTP_404 = 404

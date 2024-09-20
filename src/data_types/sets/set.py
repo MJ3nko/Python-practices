@@ -1,14 +1,12 @@
 def average(array: list) -> float:
-    sum = 0
-    array = set(array)
-    for element in array:
-        sum += element
-    average = f"{sum / len(array):0.3f}"
-    return average
+    unique_elements = set(array)
+    total_sum = sum(unique_elements)
+    average_value = total_sum / len(unique_elements)
+    return round(average_value, 3)
 
 
 if __name__ == "__main__":
-    n = int(input())
-    arr = list(map(int, input().split()))
+    n = int(input("Enter the number of elements: "))
+    arr = list(map(int, input("Enter the elements separated by space: ").split()))
     result = average(arr)
-    print(result)
+    print(f"{result:.3f}")

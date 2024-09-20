@@ -1,20 +1,33 @@
 def while_loop():
-    # Notice how we need to ask for a value twice.
-    value = int(input("Enter a value: "))
-    while value != "0":
-        value = int(input("Enter a value: "))
-        print(f"Value {value}")
+    """
+    Continuously prompts the user for a value until 0 is entered.
+    """
+    while True:
+        try:
+            value = int(input("Enter a value (0 to exit): "))
+            if value == 0:
+                break
+            print(f"Value {value}")
+        except ValueError:
+            print("Please enter a valid integer.")
 
 
 def walrus_operator():
-    # Let's use the WALRUS OPERATOR to avoid
-    # having to ask for the value twice.
-    # Python 3.8+
-    while (value := input("Enter a value: ")) != "0":
-        print(f"Value {value}")
+    """
+    Continuously prompts the user for a value using the walrus operator until 0 is entered.
+    """
+    while (value := input("Enter a value (0 to exit): ")) != "0":
+        try:
+            value = int(value)
+            print(f"Value {value}")
+        except ValueError:
+            print("Please enter a valid integer.")
 
 
 def for_loop():
+    """
+    Demonstrates the use of a for loop with a throwaway variable and a range with a step.
+    """
     for _ in range(1):
         print("Underscore is a throwaway variable.")
 
@@ -23,6 +36,9 @@ def for_loop():
 
 
 def main():
+    """
+    Main function to run the examples.
+    """
     while_loop()
     walrus_operator()
     for_loop()

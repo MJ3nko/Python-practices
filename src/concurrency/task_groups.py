@@ -1,5 +1,5 @@
 import asyncio
-from asyncio import TaskGroup
+# from asyncio import TaskGroup
 from pprint import pprint
 
 import httpx
@@ -54,9 +54,8 @@ async def search():
     # pydantic beanie mongodb odm <-- is a good search string
     text = input("What keyword to you want to look for? ").strip().lower()
 
-    async with TaskGroup() as tg:
-        tp = tg.create_task(search_podcast(text, "search.talkpython.fm"))
-        pb = tg.create_task(search_podcast(text, "search.pythonbytes.fm"))
+    tp = asyncio.create_task(search_podcast(text, "search.talkpython.fm"))
+    pb = asyncio.create_task(search_podcast(text, "search.pythonbytes.fm"))
 
     results = await asyncio.gather(tp, pb)
     pprint(results)

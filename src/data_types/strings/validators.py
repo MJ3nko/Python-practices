@@ -1,58 +1,30 @@
 def validators():
-    s = input()
-    if isalnumeric(s):
-        print("True")
-    else:
-        print("False")
-    if isalpha(s):
-        print("True")
-    else:
-        print("False")
-    if has_digit(s):
-        print("True")
-    else:
-        print("False")
-    if has_lowercase_char(s):
-        print("True")
-    else:
-        print("False")
-    if has_uppercase_char(s):
-        print("True")
-    else:
-        print("False")
+    s = input("Enter a string: ")
+    print(str(isalnum(s)))
+    print(str(isalpha(s)))
+    print(str(has_digit(s)))
+    print(str(has_lowercase_char(s)))
+    print(str(has_uppercase_char(s)))
 
 
-def isalnumeric(s):
-    if has_lowercase_char(s) or has_uppercase_char(s) or has_digit(s):
-        return True
-    return False
+def isalnum(s):
+    return any(char.isalnum() for char in s)
 
 
 def isalpha(s):
-    if has_lowercase_char(s) or has_uppercase_char(s):
-        return True
-    return False
+    return any(char.isalpha() for char in s)
 
 
 def has_uppercase_char(s):
-    for char in s:
-        if char >= "A" and char <= "Z":
-            return True
-    return False
+    return any(char.isupper() for char in s)
 
 
 def has_lowercase_char(s):
-    for char in s:
-        if char >= "a" and char <= "z":
-            return True
-    return False
+    return any(char.islower() for char in s)
 
 
 def has_digit(s):
-    for char in s:
-        if char >= "0" and char <= "9":
-            return True
-    return False
+    return any(char.isdigit() for char in s)
 
 
 def main():
