@@ -4,6 +4,7 @@ from string import Template
 
 class Guideline:
     def bool_comparison_example(self) -> None:
+        """Demonstrates good and bad practices for boolean comparisons."""
         guideline = """
         value = 0
         # Good
@@ -21,6 +22,7 @@ class Guideline:
         print(guideline)
 
     def quotation_marks(self) -> None:
+        """Guidelines for using quotation marks in strings."""
         guideline = """
         You can use various types of quotation marks inside the expressions.
         Just make sure you are not using the same type of quotation mark
@@ -29,6 +31,7 @@ class Guideline:
         print(guideline)
 
     def string_quotes(self) -> None:
+        """Guidelines for using single, double, and triple quotes in strings."""
         guideline = """
         Single-quoted strings and double-quoted strings are the same.
         Choose one and stick to it.
@@ -43,6 +46,8 @@ class Guideline:
         print(guideline)
 
     def check_strings_implementation(self, name: str) -> None:
+        """Demonstrates good and bad practices for checking string prefixes
+        and suffixes."""
         prefix = "Mar"
         suffix = "ko"
         if name.startswith(prefix) and name.endswith(suffix):
@@ -52,13 +57,14 @@ class Guideline:
 
 
 def strings_usage(string_param: str) -> None:
+    """Demonstrates various string formatting techniques."""
     favorite_number = 7
     pi = 3.14159265359
     name = "Marko"
 
     f_strings_output(favorite_number, pi)
     format_output(favorite_number, pi)
-    raw_string()
+    raw_string_example()
     template_strings_output(name)
     legacy_output(favorite_number, name)
 
@@ -75,7 +81,7 @@ def format_output(favorite_number: int, pi: float) -> None:
     print(f"favorite number = {favorite_number}, pi = {pi}")
 
 
-def raw_string() -> None:
+def raw_string_example() -> None:
     """Demonstrates raw string usage."""
     raw_string = r"Look at all these \n \x \\\ values."
     print(raw_string)
@@ -93,6 +99,7 @@ def legacy_output(favorite_number: int, name: str) -> None:
 
 
 def main() -> None:
+    """Main function to execute the script."""
     positional_arguments = sys.argv[:]
     print(f"Sys.argv[:] values: {positional_arguments} \n")
     strings_usage("Write good code.")
