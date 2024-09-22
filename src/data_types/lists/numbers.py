@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from typing import List
+from typing import List, Callable, Dict
 
 
 @dataclass
@@ -16,7 +16,10 @@ class Numbers:
         self.numbers.append(number)
 
     def remove(self, number: int) -> None:
-        self.numbers.remove(number)
+        try:
+            self.numbers.remove(number)
+        except ValueError:
+            print(f"ValueError: {number} not in list")
 
     def sort(self) -> None:
         self.numbers.sort()
@@ -25,26 +28,28 @@ class Numbers:
         self.numbers.reverse()
 
     def pop(self) -> None:
-        self.numbers.pop()
+        if self.numbers:
+            self.numbers.pop()
+        else:
+            print("IndexError: pop from empty list")
 
-    def list_methods_usage(self) -> None:
-        number_of_commands = int(input())
-        for _ in range(number_of_commands):
-            command, *line = input().split()
-            self.handle_command(command, line)
-
-    def handle_command(self, command: str, line: List[str]) -> None:
-        commands = {
+    def handle_command(self, command: str, args: List[str]) -> None:
+        commands: Dict[str, Callable[[], None]] = {
             "print": self.print,
-            "insert": lambda: self.insert(int(line[0]), int(line[1])),
-            "append": lambda: self.append(int(line[0])),
-            "remove": lambda: self.remove(int(line[0])),
+            "insert": lambda: self.insert(int(args[0]), int(args[1])),
+            "append": lambda: self.append(int(args[0])),
+            "remove": lambda: self.remove(int(args[0])),
             "sort": self.sort,
             "reverse": self.reverse,
             "pop": self.pop,
         }
         if command in commands:
-            commands[command]()
+            try:
+                commands[command]()
+            except (IndexError, ValueError) as e:
+                print(f"Error: {e}")
+        else:
+            print(f"Unknown command: {command}")
 
 
 def main() -> None:

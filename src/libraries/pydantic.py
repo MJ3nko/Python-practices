@@ -1,7 +1,5 @@
-import pydantic
-from pydantic import BaseModel
-
 from typing import List, Optional
+from pydantic import BaseModel, Field
 
 
 class SearchItem(BaseModel):
@@ -16,5 +14,5 @@ class SearchItem(BaseModel):
 class SearchResponse(BaseModel):
     elapsed_ms: float
     keywords: List[str]
-    results: List[SearchItem] = pydantic.Field(default_factory=list)
-    episodes: List[SearchItem] = pydantic.Field(default_factory=list)
+    results: List[SearchItem] = Field(default_factory=list)
+    episodes: List[SearchItem] = Field(default_factory=list)

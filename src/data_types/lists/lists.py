@@ -1,10 +1,3 @@
-def guideline():
-    guideline = """
-    Lists are mutable and tuples are immutable.
-    """
-    print(guideline)
-
-
 def lists_usage():
     last_semester_gradebook = [
         ("politics", 80),
@@ -34,37 +27,34 @@ def create_and_return_gradebook(subjects, grades, last_semester_gradebook):
 
 def print_for_loop_gradebook(gradebook):
     print("Printing gradebook content:")
-    for index in range(len(gradebook)):
-        print(gradebook[index])
+    for subject, grade in gradebook:
+        print(f"{subject}: {grade}")
 
 
 def unpack_argument_list():
-    # Python 3.0+
     items = [1, "New", 3.21, 4, 5]
     head, *body, tail = items
+    print(f"Head: {head}, Body: {body}, Tail: {tail}")
 
 
 def return_sample_names():
-    # create a tuple
     names = ["Jenny", "Alexus", "Sam", "Grace"]
     dog_names = ["Elphonse", "Dr. Doggy DDS", "Carter", "Ralph"]
-    return zip(names, dog_names)
+    return list(zip(names, dog_names))
 
 
 def run_method(method):
     usage_help = f"Do you want to execute {method}?\nEnter an option (y or n):"
     while (selected_option := input(usage_help).lower()) not in ["y", "n"]:
         print(f"{selected_option} is not supported. Try again.")
-    if selected_option == "y":
-        return True
-    return False
+    return selected_option == "y"
 
 
 def list_comprehension_usage_example():
-    first = int(input())
-    second = int(input())
-    third = int(input())
-    ignored_sum = int(input())
+    first = int(input("Enter first number: "))
+    second = int(input("Enter second number: "))
+    third = int(input("Enter third number: "))
+    ignored_sum = int(input("Enter the sum to ignore: "))
 
     combinations = [
         [a, b, c]
@@ -77,10 +67,8 @@ def list_comprehension_usage_example():
 
 
 def print_second_largest_number():
-    mapper = map(int, input().split())
-    numbers = list(mapper)
-    first = numbers[0]
-    second = numbers[0]
+    numbers = list(map(int, input("Enter numbers separated by space: ").split()))
+    first, second = float("-inf"), float("-inf")
 
     for number in numbers:
         if number > first:
@@ -93,22 +81,20 @@ def print_second_largest_number():
 
 
 def print_the_average_percentage():
-    number_of_lines = int(input())
+    number_of_lines = int(input("Enter number of students: "))
     student_score = {}
     for _ in range(number_of_lines):
-        name, *line = input().split()
+        name, *line = input("Enter student name and scores: ").split()
         scores = list(map(float, line))
         student_score[name] = scores
-    query_name = input()
+    query_name = input("Enter student name to query: ")
     average = return_average_student_score(student_score[query_name])
-    print(f"{average:0.2f}")
+    print(f"{average:.2f}")
 
 
 def return_average_student_score(student_scores):
-    sum = 0
-    for score in student_scores:
-        sum += score
-    average = sum / len(student_scores)
+    total = sum(student_scores)
+    average = total / len(student_scores)
     return average
 
 
