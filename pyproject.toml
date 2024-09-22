@@ -22,6 +22,14 @@ autopep8 = "^1.5.7"
 black = "^21.9b0"
 flake8 = "^3.9.2"
 
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "W", "C90"]
+
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
