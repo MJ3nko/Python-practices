@@ -12,7 +12,9 @@ class Rectangle:
         return self.width * self.height
 
     def __repr__(self) -> str:
-        return f"Rectangle(color={self.color}, width={self.width}, height={self.height})"
+        return (
+            f"Rectangle(color={self.color}, width={self.width}, height={self.height})"
+        )
 
 
 @dataclass
@@ -39,9 +41,7 @@ class Color(Enum):
 
 def object_type_comparison(obj: object):
     if isinstance(obj, int):
-        print("Good practice with isinstance.")
-    if type(obj) is int:
-        print("Bad practice with type.")
+        print("Good practice with isinstance. Do not use type(obj).")
 
 
 def compare_class_objects():

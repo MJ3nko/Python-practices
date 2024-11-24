@@ -1,5 +1,6 @@
 from typing import List, Tuple, Optional
 
+
 def print_second_lowest_grade_names(students: List[Tuple[str, float]]) -> None:
     """
     Prints the names of students with the second lowest grade.
@@ -21,7 +22,9 @@ def get_second_lowest_grade(students: List[Tuple[str, float]]) -> Optional[float
     return unique_grades[1] if len(unique_grades) > 1 else None
 
 
-def get_students_with_grade(students: List[Tuple[str, float]], grade: float) -> List[str]:
+def get_students_with_grade(
+    students: List[Tuple[str, float]], grade: float
+) -> List[str]:
     """
     Returns a list of student names who have the specified grade.
     """
@@ -41,7 +44,10 @@ def main() -> None:
             students.append((name, score))
         print_second_lowest_grade_names(students)
     except ValueError:
-        print("Invalid input. Please enter numeric values for number of students and scores.")
+        print(
+            "Invalid input. Please enter numeric values for number of students "
+            "and scores."
+        )
 
 
 if __name__ == "__main__":

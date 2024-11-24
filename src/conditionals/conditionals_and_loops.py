@@ -14,7 +14,8 @@ def while_loop():
 
 def walrus_operator():
     """
-    Continuously prompts the user for a value using the walrus operator until 0 is entered.
+    Continuously prompts the user for a value using the walrus operator
+    until 0 is entered.
     """
     while (value := input("Enter a value (0 to exit): ")) != "0":
         try:
@@ -26,7 +27,8 @@ def walrus_operator():
 
 def for_loop():
     """
-    Demonstrates the use of a for loop with a throwaway variable and a range with a step.
+    Demonstrates the use of a for loop with a throwaway variable
+    and a range with a step.
     """
     for _ in range(1):
         print("Underscore is a throwaway variable.")

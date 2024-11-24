@@ -7,7 +7,11 @@ def add_elements(elements_count: int):
 
 def check_word_occurrence(group_container, group_a, group_b):
     for b_element in group_container[group_b]:
-        index_values = [str(index + 1) for index, a_element in enumerate(group_container[group_a]) if a_element == b_element]
+        index_values = [
+            str(index + 1)
+            for index, a_element in enumerate(group_container[group_a])
+            if a_element == b_element
+        ]
         print(" ".join(index_values) if index_values else "-1")
 
 
