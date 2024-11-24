@@ -20,7 +20,6 @@ def connect_to_db(conn_str, server: Optional[str] = None, port: Optional[int] = 
 
 
 def setup_app():
-    # conn_str = "mongo://user=mk&password=a&database=talkpython"
     conn_str = "mongo://user=mk&password=a&database=talkpython&port=1000"
     server = "localhost"
     port = 27017
@@ -36,8 +35,6 @@ def setup_app():
 
 
 def main():
-    # setup_app()
-
     try:
         setup_app()
         print("App ready")
